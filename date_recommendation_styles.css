@@ -1,0 +1,286 @@
+/* Date Recommendation Styles */
+.date-recommendation {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Success variant - Green */
+.date-recommendation.success {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-left: 4px solid #4caf50;
+}
+
+.date-recommendation.success .recommendation-icon {
+    color: #2e7d32;
+}
+
+/* Warning variant - Orange/Yellow */
+.date-recommendation.warning {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    border-left: 4px solid #ff9800;
+}
+
+.date-recommendation.warning .recommendation-icon {
+    color: #ef6c00;
+}
+
+/* Info variant - Blue */
+.date-recommendation.info {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-left: 4px solid #2196f3;
+}
+
+.date-recommendation.info .recommendation-icon {
+    color: #1565c0;
+}
+
+/* Icon styling */
+.recommendation-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+
+/* Content area */
+.recommendation-content {
+    flex: 1;
+}
+
+.recommendation-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.recommendation-message {
+    line-height: 1.6;
+    color: #424242;
+    margin-bottom: 12px;
+}
+
+.recommendation-message strong {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.recommendation-message br {
+    content: "";
+    display: block;
+    margin: 8px 0;
+}
+
+/* Trip duration badge */
+.trip-duration-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    margin-top: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.trip-duration-badge i {
+    font-size: 1rem;
+}
+
+.trip-duration-badge strong {
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .date-recommendation {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+    
+    .recommendation-icon {
+        font-size: 1.5rem;
+        align-self: flex-start;
+    }
+    
+    .recommendation-title {
+        font-size: 1rem;
+    }
+    
+    .recommendation-message {
+        font-size: 0.95rem;
+    }
+    
+    .trip-duration-badge {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Ensure recommendation appears below other content */
+.question-card .date-recommendation {
+    order: 10;
+}
+
+/* Email validation styling */
+input.invalid-email {
+    border: 2px solid #f44336 !important;
+    background-color: #ffebee !important;
+}
+
+input.invalid-email:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.2);
+}
+
+/* Place name validation styling */
+input.invalid-place-name {
+    border: 2px solid #f44336 !important;
+    background-color: #ffebee !important;
+}
+
+input.invalid-place-name:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.2);
+}
+
+/* Label styling for group fields */
+.labeled-input-group {
+    margin-bottom: 20px;
+}
+
+.labeled-input-group .group-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.labeled-input-group .group-label::after {
+    content: '';
+}
+
+/* Mandatory field indicator */
+.group-label:has(+ input[type="email"]):not(:has(+ input:valid))::before,
+.group-label:has(+ input[required])::before {
+    color: #f44336;
+}
+
+/* Input focus states */
+.question-input-group:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Email hint text */
+.email-hint {
+    display: block;
+    font-size: 0.85rem;
+    color: #f44336;
+    margin-top: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+input.invalid-email + .email-hint {
+    opacity: 1;
+}
+
+/* Validation hint for fields */
+.validation-hint {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+input.invalid-place-name ~ .validation-hint {
+    color: #f44336;
+    font-weight: 600;
+}
+
+/* Highlighted important notes */
+.highlight-note {
+    display: inline-block;
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border-left: 4px solid #ff9800;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    color: #000;
+    margin: 10px 0;
+    box-shadow: 0 2px 6px rgba(255, 152, 0, 0.2);
+}
+
+.highlight-note::before {
+    content: '';
+    margin-right: 0;
+}
+
+/* Make sure the note class has proper spacing */
+.note .highlight-note,
+small.note .highlight-note {
+    display: block;
+    margin-top: 8px;
+}
+
+/* Summary Warnings Section */
+.summary-warnings-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-warnings-section .warnings-title {
+    color: #ff9800;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.summary-warnings-section .warnings-title i {
+    font-size: 1.8rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.summary-warnings-section .date-warning {
+    margin-bottom: 15px;
+}
+
+.summary-warnings-section .date-warning:last-child {
+    margin-bottom: 0;
+}

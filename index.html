@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCKER - Visa Application Locker</title>
+    <link rel="icon" type="image/png" href="https://www.visad.co.uk/wp-content/uploads/2025/08/visad-png.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="user_form.css">
+    <link rel="stylesheet" href="date_recommendation_styles.css">
+</head>
+<body class="loading">
+    <!-- Top Navigation Header -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="header-left">
+                <img src="https://www.visad.co.uk/wp-content/uploads/2025/08/visad-png.png" alt="VisaD Logo" class="brand-logo">
+            </div>
+            <div class="header-right">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main container for the entire application -->
+    <div class="main-container">
+        <div class="form-container">
+            <div class="header">
+                <h1 id="header-title">LOCKER</h1>
+                <p id="header-subtitle">VISA INFO</p>
+                
+                
+                <!-- Appointment Date Display -->
+                <div id="appointment-date-container" style="display: none;">
+                    <div class="appointment-date-display">
+                        <i class="fas fa-calendar-check"></i>
+                        <div class="appointment-info">
+                            <span class="appointment-label">Appointment Date</span>
+                            <span class="appointment-date" id="appointment-date-text">--</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Co-Travellers Display -->
+                <div id="co-travelers-container" style="display: none;">
+                    <div class="co-travelers-section">
+                        <div class="co-travelers-header collapsed" id="co-travelers-toggle">
+                            <i class="fas fa-users"></i>
+                            <span>Co-Travellers</span>
+                            <span class="co-travelers-names" id="co-travelers-names"></span>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div id="co-travelers-list" class="co-travelers-list collapsed">
+                            <!-- Co-travellers will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Progress Bar moved inside header for better design -->
+                <div id="progress-bar-container" style="display: none;">
+                    <div id="progress-text-wrapper">
+                        <span>Application Progress</span>
+                        <span id="progress-text">0%</span>
+                    </div>
+                    <div id="progress-bar-wrapper">
+                        <div id="progress-bar"></div>
+                        
+
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="content-area">
+                <!-- Login View -->
+                <div id="login-view" class="view active">
+                    <form id="password-form">
+                        <div class="input-group">
+                            <label for="password">Enter Your Password</label>
+                            <!-- Added password toggle container and button -->
+                            <div class="password-container">
+                                <input type="password" id="password" placeholder="e.g., 25121990" required>
+                                <button type="button" class="password-toggle" id="password-toggle-btn">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <small>Hint: Your full date of birth in DDMMYYYY format.</small>
+                        </div>
+                        <button type="submit" class="btn-primary">Verify & Proceed <i class="fas fa-arrow-right"></i></button>
+                        <div id="login-error" class="error-message"></div>
+                    </form>
+                </div>
+
+                <!-- Personal Info View -->
+                <div id="personal-info-view" class="view">
+                    <p class="note">Please review your visa application details below. You may edit and update any information as needed.
+    We are beginning your application and will require the supporting documents listed, along with accurate answers to all questions. To avoid delays or rejection, please double check every entry.</p>
+                    
+                    <!-- Re-styled as a modern section card -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3 class="section-title"><i class="fas fa-user-check"></i> For Your Review</h3>
+                        </div>
+                        <div class="info-grid" id="personal-info-review-grid">
+                            <!-- Read-only data will be dynamically inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Re-styled as a modern section card -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3 class="section-title"><i class="fas fa-edit"></i> To Be Completed</h3>
+                        </div>
+                        <p class="note" style="text-align: left; max-width: 100%; margin: -10px 0 20px 0;">Please fill in or edit the required fields below to proceed.</p>
+                        <div class="info-grid" id="personal-info-edit-grid">
+                            <!-- Editable personal data will be dynamically inserted here -->
+                        </div>
+                    </div>
+
+                    <div id="personal-info-error" class="error-message"></div>
+                    <div class="navigation-buttons">
+                        <span></span> <!-- Spacer -->
+                        <button id="to-questions-btn" class="btn-primary" disabled>Confirm<i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Question Flow View -->
+                <div id="question-flow-view" class="view">
+                    <!-- Conversational question flow will be here -->
+                </div>
+                
+                <!-- NEW: Unified Summary View (Static Template) -->
+                <div id="summary-view" class="view">
+                    <div id="summary-final-message" class="success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i> Your application has been submitted successfully.
+                    </div>
+
+                    <!-- Section 1: Locked Information -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3 class="section-title"><i class="fas fa-lock"></i> Locked Information</h3>
+                            <span class="locked-badge"><i class="fas fa-lock"></i> Locked</span>
+                        </div>
+                        <div class="info-grid" id="summary-locked-grid">
+                            <!-- Content will be populated by renderSummaryView -->
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Personal Details -->
+                    <div class="section" id="section-personal">
+                        <div class="section-header">
+                            <h3 class="section-title"><i class="fas fa-user-circle"></i> Personal & Contact Details</h3>
+                            <div class="section-edit-buttons">
+                                <button class="btn-secondary cancel-btn" style="display: none;"><i class="fas fa-times"></i> Cancel</button>
+                                <button class="btn-primary edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                            </div>
+                        </div>
+                        <div class="info-grid" id="summary-personal-grid">
+                             <!-- Content will be populated by renderSummaryView -->
+                        </div>
+                    </div>
+                    
+                    <!-- Section 3: Grouped Questions (Categories) -->
+                    <div id="summary-questions-grid">
+                        <!-- All question sections will be dynamically injected here by renderSummaryView -->
+                    </div>
+
+                    <!-- Final Submission Buttons (Injected by JS) -->
+                    <div id="summary-actions-container"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skeleton Loader -->
+    <div id="skeleton-loader" class="skeleton-loader" style="display: block;">
+        <div class="skeleton-container">
+            <div class="skeleton-header">
+                <div class="skeleton-logo"></div>
+                <div class="skeleton-toggle"></div>
+            </div>
+            <div class="skeleton-card">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
+                <div class="skeleton-progress"></div>
+            </div>
+            <div class="skeleton-card skeleton-question">
+                <div class="skeleton-text skeleton-text-lg"></div>
+                <div class="skeleton-text skeleton-text-sm"></div>
+                <div class="skeleton-input"></div>
+                <div class="skeleton-buttons">
+                    <div class="skeleton-button"></div>
+                    <div class="skeleton-button skeleton-button-primary"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <!-- Help Section - Hidden on login -->
+            <div class="footer-help hide-on-login">
+                <div class="help-card">
+                    <i class="fas fa-file-alt"></i>
+                    <div class="help-text">
+                        <h4>Need help with documents?</h4>
+                        <p>Our specialists can review your uploads and check for accuracy.</p>
+                    </div>
+                    <a href="https://wa.me/7405074515" target="_blank" class="footer-btn contact-support-btn">Contact Support</a>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-left">
+                    <i class="fas fa-lock"></i>
+                    <span>Your data is protected</span>
+                </div>
+                <div class="footer-right">
+                    <span>© 2025 VISAD (Developed By RABYIC LIMITED <a href="https://www.raybic.com" target="_blank" class="footer-link" style="text-decoration: none;">www.raybic.com</a>)</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- NEW: Delete Confirmation Modal -->
+    <div id="delete-modal-backdrop" style="display: none;">
+        <div id="delete-modal-content">
+            <h4><i class="fas fa-trash"></i> Confirm Deletion</h4>
+            <p>Are you sure you want to delete this file? This action cannot be undone.</p>
+            <p id="delete-modal-filename" style="font-weight: 600; color: var(--error-color);"></p>
+            <div class="modal-buttons">
+                <button id="delete-modal-cancel" class="btn-secondary">Cancel</button>
+                <button id="delete-modal-confirm" class="btn-primary danger">Delete File</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="user_form.js"></script>
+    
+    <!-- Inline script for password toggle, dark mode, and login state management -->
+    <script>
+        $(document).ready(function() {
+            // Hide skeleton loader after minimum display time
+            const minLoadTime = 800; // Minimum time to show skeleton (in ms)
+            const startTime = Date.now();
+            
+            // Function to hide skeleton
+            function hideSkeletonLoader() {
+                const elapsed = Date.now() - startTime;
+                const remainingTime = Math.max(0, minLoadTime - elapsed);
+                
+                setTimeout(function() {
+                    // Remove loading class from body
+                    $('body').removeClass('loading');
+                    
+                    // Fade out skeleton
+                    $('#skeleton-loader').fadeOut(400, function() {
+                        $(this).remove(); // Remove from DOM after hiding
+                    });
+                    
+                    // Show and fade in main container
+                    $('.main-container').css('opacity', '0').show().animate({opacity: 1}, 400);
+                }, remainingTime);
+            }
+            
+            // Hide main container initially
+            $('.main-container').hide();
+            
+            // Hide skeleton after content is ready
+            $(window).on('load', function() {
+                hideSkeletonLoader();
+            });
+            
+            // Fallback: hide after max time even if window load doesn't fire
+            setTimeout(hideSkeletonLoader, 3000);
+            
+            // Function to update login state
+            function updateLoginState() {
+                const isLoginView = $('#login-view').hasClass('active');
+                if (isLoginView) {
+                    $('body').addClass('on-login-page');
+                    $('.hide-on-login').hide();
+                } else {
+                    $('body').removeClass('on-login-page');
+                    $('.hide-on-login').show();
+                }
+            }
+            
+            // Initial state check
+            updateLoginState();
+            
+            // Watch for view changes using MutationObserver
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'class') {
+                        updateLoginState();
+                    }
+                });
+            });
+            
+            // Observe the login view for class changes
+            const loginView = document.getElementById('login-view');
+            if (loginView) {
+                observer.observe(loginView, { attributes: true });
+            }
+            
+            // Also observe other views
+            $('.view').each(function() {
+                observer.observe(this, { attributes: true });
+            });
+            
+            // Password toggle
+            $('#password-toggle-btn').on('click', function() {
+                const passwordField = $('#password');
+                const fieldType = passwordField.attr('type');
+                const icon = $(this).find('i');
+                
+                if (fieldType === 'password') {
+                    passwordField.attr('type', 'text');
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    passwordField.attr('type', 'password');
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            });
+            
+            // Dark Mode Toggle
+            const themeToggle = $('#theme-toggle');
+            const body = $('body');
+            
+            // Check for saved theme preference
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                body.addClass('dark-mode');
+            }
+            
+            // Toggle theme on button click
+            themeToggle.on('click', function() {
+                body.toggleClass('dark-mode');
+                
+                if (body.hasClass('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
