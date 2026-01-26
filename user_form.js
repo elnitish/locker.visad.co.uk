@@ -692,7 +692,7 @@ $(document).ready(function () { // FIX 4: Added $
                     const token = response.data.public_url_token;
 
                     // Generate access URL with f.html
-                    const accessUrl = `https://locker.visad.co.uk/f.html?token=${token}`;
+                    const accessUrl = `https://l.visad.co.uk/f.html?token=${token}`;
 
                     // Generate password from DOB (ddmmyyyy format)
                     let password = 'N/A';
@@ -1117,7 +1117,7 @@ $(document).ready(function () { // FIX 4: Added $
                             <div class="evisa-example-content">
                                 <button class="evisa-example-close">&times;</button>
                                 <h4 style="margin: 0 0 15px 0; color: var(--primary-color);">Example: UK eVisa</h4>
-                                <img src="https://locker.visad.co.uk/IMG/evisa_model.jpeg" alt="eVisa Example" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                <img src="https://l.visad.co.uk/IMG/evisa_model.jpeg" alt="eVisa Example" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                                 <p style="margin-top: 10px; font-size: 0.85rem; color: #666;">This is what a UK eVisa typically looks like. Look for the dates shown in your digital status.</p>
                             </div>
                         </div>
@@ -1181,7 +1181,7 @@ $(document).ready(function () { // FIX 4: Added $
                             <div class="sharecode-modal-content">
                                 <button class="sharecode-modal-close">&times;</button>
                                 <h4 style="margin: 0 0 15px 0; color: var(--primary-color);">How to Download Share Code PDF</h4>
-                                <img src="https://locker.visad.co.uk/IMG/share_code_model_downlaod.jpeg" alt="How to Download Share Code" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                <img src="https://l.visad.co.uk/IMG/share_code_model_downlaod.jpeg" alt="How to Download Share Code" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                                 <p style="margin-top: 10px; font-size: 0.85rem; color: #666;">Follow these steps to download your Share Code as a PDF from the UK government website.</p>
                             </div>
                         </div>
@@ -1193,7 +1193,7 @@ $(document).ready(function () { // FIX 4: Added $
                             <div class="sharecode-modal-content">
                                 <button class="sharecode-modal-close">&times;</button>
                                 <h4 style="margin: 0 0 15px 0; color: var(--primary-color);">Example: UK Share Code</h4>
-                                <img src="https://locker.visad.co.uk/IMG/share_code_model.jpeg" alt="Share Code Example" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                                <img src="https://l.visad.co.uk/IMG/share_code_model.jpeg" alt="Share Code Example" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                                 <p style="margin-top: 10px; font-size: 0.85rem; color: #666;">This is what your Share Code document typically looks like. Look for the 9-character code.</p>
                             </div>
                         </div>
@@ -1296,7 +1296,7 @@ $(document).ready(function () { // FIX 4: Added $
 
                 if (selectedValue === 'Yes') {
                     // Check if file collection logic is supported for this question
-                    const unsupportedUploads = ['schengen_visa_image'];
+                    const unsupportedUploads = [];
                     if (unsupportedUploads.includes(q.uploadField)) {
                         // Unsupported: Show warning instead of upload
                         uploadSection.slideUp();
