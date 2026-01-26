@@ -30,7 +30,18 @@ console.log("-----------------------------------------");
 console.log("Locker App Script Loaded");
 console.log("Current URL:", window.location.href);
 const urlParams = new URLSearchParams(window.location.search);
-const token = urlParams.get('token');
+let token = urlParams.get('token');
+
+// Support Path-based Token (e.g., /ab7af1ed)
+if (!token) {
+    const path = window.location.pathname;
+    // Remove leading/trailing slashes and get last segment
+    const segments = path.replace(/^\/+|\/+$/g, '').split('/');
+    if (segments.length > 0 && segments[0] !== '') {
+        token = segments[segments.length - 1];
+    }
+}
+
 console.log("Extracted Token:", token);
 if (!token) {
     console.error("CRITICAL: No token found in URL! The app may not function correctly.");
@@ -352,8 +363,6 @@ function createFileList(files, dbfield) {
 
 
 $(document).ready(function () { // FIX 4: Added $
-    const urlParams = new URLSearchParams(window.location.search);
-    const token = urlParams.get('token');
 
     // Co-travelers data - will be loaded from API
     let coTravelersData = [];
