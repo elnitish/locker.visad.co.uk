@@ -793,15 +793,10 @@ $(document).ready(function () { // FIX 4: Added $
                         currentQuestionIndex = (lastIndex > 0 && lastIndex < questions.length) ? lastIndex : 0;
 
                         // 3. If new user (index 0), start with personal info.
-                        if (currentQuestionIndex === 0) {
-                            renderPersonalInfo();
-                            checkPersonalInfoCompletion();
-                            navigateTo('#personal-info-view');
-                        } else {
-                            // 4. If returning user, jump straight to their last question
-                            navigateTo('#question-flow-view');
-                            renderQuestion();
-                        }
+                        // 3. Always start with personal info review
+                        renderPersonalInfo();
+                        checkPersonalInfoCompletion();
+                        navigateTo('#personal-info-view');
                     }
                 } else {
                     $('#login-error').text(res.message || 'Verification failed.').show();
@@ -875,8 +870,8 @@ $(document).ready(function () { // FIX 4: Added $
     $('#to-questions-btn').on('click', function () {
         if (checkPersonalInfoCompletion()) {
             $('#personal-info-error').hide();
-            currentQuestionIndex = 0; // Ensure we start at question 0
-            saveQuestionData({ last_question_index: 0 }); // Save progress
+            // Resuming from currentQuestionIndex (loaded from DB on login)
+            // No need to reset to 0
             navigateTo('#question-flow-view');
             renderQuestion();
         } else {
