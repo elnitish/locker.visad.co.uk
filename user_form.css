@@ -13,7 +13,7 @@ html {
     --success-color: #10b981;
     --error-color: #ef4444;
     --warning-color: #f59e0b;
-    
+
     /* Refined Grays for Professional Look */
     --light-gray: #f8fafc;
     --medium-gray: #e2e8f0;
@@ -21,18 +21,18 @@ html {
     --text-dark: #0f172a;
     --text-light: #475569;
     --text-muted: #94a3b8;
-    
+
     /* Modern Shadows with Depth */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    
+
     /* Border Radius for Modern Look */
     --radius-sm: 6px;
     --radius: 10px;
     --radius-lg: 16px;
-    
+
     /* Spacing Scale */
     --spacing-xs: 8px;
     --spacing-sm: 12px;
@@ -48,17 +48,17 @@ body.dark-mode {
     --success-color: #10b981;
     --error-color: #f87171;
     --warning-color: #fbbf24;
-    
+
     --light-gray: #1e293b;
     --medium-gray: #334155;
     --dark-gray: #94a3b8;
     --text-dark: #f1f5f9;
     --text-light: #e2e8f0;
-    
+
     --bg-primary: #0f172a;
     --bg-secondary: #1e293b;
     --bg-tertiary: #334155;
-    
+
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
 }
@@ -105,7 +105,10 @@ body.dark-mode label,
 body.dark-mode .info-item label,
 body.dark-mode .section-title,
 body.dark-mode .question-text,
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4 {
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
     color: var(--text-light);
 }
 
@@ -158,8 +161,8 @@ body.dark-mode small {
 }
 
 /* Hide certain elements on login page */
-#login-view.active ~ * .hide-on-login,
-.view.active#login-view ~ .hide-on-login,
+#login-view.active~* .hide-on-login,
+.view.active#login-view~.hide-on-login,
 body.on-login-page .hide-on-login {
     display: none !important;
 }
@@ -373,7 +376,7 @@ body.dark-mode .help-card {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.help-card > i {
+.help-card>i {
     font-size: 2.5rem;
     color: var(--primary-color);
     flex-shrink: 0;
@@ -481,51 +484,51 @@ body.dark-mode .footer-link {
     .header-content {
         padding: 10px 15px;
     }
-    
+
     .brand-logo {
         height: 35px;
     }
-    
+
     .brand-name {
         font-size: 1.2rem;
     }
-    
+
     .brand-tagline {
         font-size: 0.75rem;
     }
-    
+
     .header-btn span {
         display: none;
     }
-    
+
     .header-btn {
         padding: 10px;
     }
-    
+
     .theme-toggle {
         padding: 8px 10px;
     }
-    
+
     .user-name {
         display: none;
     }
-    
+
     .user-info {
         padding: 8px 12px;
     }
-    
+
     .help-card {
         flex-direction: column;
         text-align: center;
         padding: 20px;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: 15px;
         text-align: center;
     }
-    
+
     .footer-left,
     .footer-right {
         flex-direction: column;
@@ -673,6 +676,7 @@ body {
 }
 
 @media (max-width: 480px) {
+
     .header p,
     #header-subtitle {
         font-size: 0.8rem;
@@ -744,15 +748,15 @@ body {
     .appointment-date-display {
         padding: 12px 16px;
     }
-    
+
     .appointment-date-display i {
         font-size: 1.5rem;
     }
-    
+
     .appointment-label {
         font-size: 0.75rem;
     }
-    
+
     .appointment-date {
         font-size: 1.1rem;
         padding: 6px 12px;
@@ -804,7 +808,7 @@ body {
     transform: rotate(-90deg);
 }
 
-.co-travelers-header > i:first-of-type {
+.co-travelers-header>i:first-of-type {
     font-size: 1.3rem;
     color: #10b981;
 }
@@ -933,11 +937,11 @@ body {
         grid-template-columns: 1fr;
         padding: 10px 12px;
     }
-    
+
     .co-travelers-header {
         font-size: 0.85rem;
     }
-    
+
     .co-traveler-name {
         font-size: 1rem;
     }
@@ -951,21 +955,24 @@ body {
     padding: 0;
     margin-top: 20px;
 }
+
 #progress-text-wrapper {
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;
     font-weight: 600;
-   color: #1d9f91;
+    color: #1d9f91;
     margin-bottom: 8px;
     opacity: 0.9;
 }
+
 #progress-bar-wrapper {
     background-color: rgb(187 187 187 / 30%);
     border-radius: 8px;
     overflow: hidden;
     height: 10px;
 }
+
 #progress-bar {
     width: 0%;
     height: 100%;
@@ -973,11 +980,13 @@ body {
     border-radius: 8px;
     transition: width 0.4s ease-out;
 }
+
 /* Removed old #progress-text style */
 
 .content-area {
     padding: 20px;
 }
+
 @media (min-width: 600px) {
     .content-area {
         padding: 30px;
@@ -988,6 +997,7 @@ body {
 .view {
     display: none;
 }
+
 .view.active {
     display: block;
     animation: fadeIn 0.5s ease-out;
@@ -1001,7 +1011,8 @@ body {
     margin: 20px auto;
 }
 
-.input-group label, .info-item label {
+.input-group label,
+.info-item label {
     font-weight: 600;
     margin-bottom: 10px;
     display: block;
@@ -1025,7 +1036,10 @@ body.dark-mode .info-item label {
 }
 
 /* Modern Input Styles */
-.input-group input, .input-group select, .question-input-group, .question-card select {
+.input-group input,
+.input-group select,
+.question-input-group,
+.question-card select {
     width: 100%;
     /* Increased padding for better touch targets and readability */
     padding: 18px 16px;
@@ -1043,13 +1057,17 @@ body.dark-mode .info-item label {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.input-group input:focus, .question-input-group:focus {
+
+.input-group input:focus,
+.question-input-group:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
     outline: none;
 }
+
 /* Placeholder styling */
-.input-group input::placeholder, .question-input-group::placeholder {
+.input-group input::placeholder,
+.question-input-group::placeholder {
     color: var(--dark-gray);
     font-weight: 400;
     font-size: 1.05rem;
@@ -1141,6 +1159,7 @@ body.dark-mode .date-range-error-message ul {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1294,6 +1313,7 @@ body.dark-mode .date-duration-info .duration-benefits {
 .email-error-message.show {
     display: block;
 }
+
 .input-group small {
     color: var(--dark-gray);
     margin-top: 6px;
@@ -1306,9 +1326,12 @@ body.dark-mode .date-duration-info .duration-benefits {
 .password-container {
     position: relative;
 }
+
 .password-container input {
-    padding-right: 45px; /* Make space for icon */
+    padding-right: 45px;
+    /* Make space for icon */
 }
+
 .password-toggle {
     position: absolute;
     right: 5px;
@@ -1324,13 +1347,15 @@ body.dark-mode .date-duration-info .duration-benefits {
     align-items: center;
     justify-content: center;
 }
+
 .password-toggle:hover {
     background: var(--light-gray);
 }
 
 
 /* Modern Button Styles */
-.btn-primary, .btn-secondary {
+.btn-primary,
+.btn-secondary {
     border: none;
     padding: 16px 24px;
     border-radius: 8px;
@@ -1344,40 +1369,48 @@ body.dark-mode .date-duration-info .duration-benefits {
     gap: 8px;
     white-space: nowrap;
 }
+
 .btn-primary {
     background-color: var(--primary-color);
     color: white;
     box-shadow: var(--shadow);
 }
+
 .btn-primary:hover:not(:disabled) {
     background-color: var(--primary-hover);
     transform: translateY(-1px);
     box-shadow: 0 7px 10px -3px rgba(37, 99, 235, 0.3);
 }
+
 .btn-primary:disabled {
     background-color: #a5b4fc;
     cursor: not-allowed;
     box-shadow: none;
 }
+
 .btn-secondary {
     background-color: var(--medium-gray);
     color: var(--text-dark);
 }
+
 .btn-secondary:hover {
     background-color: #cbd5e1;
     transform: translateY(-1px);
 }
+
 /* New Danger button style for delete */
 .btn-primary.danger {
     background-color: var(--error-color);
 }
+
 .btn-primary.danger:hover {
     background-color: #b91c1c;
     box-shadow: 0 7px 10px -3px rgba(239, 68, 68, 0.3);
 }
 
 
-.error-message, .success-message {
+.error-message,
+.success-message {
     color: var(--error-color);
     background-color: #fee2e2;
     border: 1px solid #fca5a5;
@@ -1390,6 +1423,7 @@ body.dark-mode .date-duration-info .duration-benefits {
     font-size: 1rem;
     line-height: 1.5;
 }
+
 .success-message {
     color: #065f46;
     background-color: #d1fae5;
@@ -1426,11 +1460,13 @@ body.dark-mode .date-duration-info .duration-benefits {
     position: relative;
     transition: all 0.2s ease;
 }
+
 /* Removed hover effect, edit is explicit */
 .info-item.read-only {
     background-color: var(--light-gray);
     color: var(--dark-gray);
 }
+
 .info-item.full-width {
     grid-column: 1 / -1;
 }
@@ -1445,6 +1481,7 @@ body.dark-mode .date-duration-info .duration-benefits {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
 .info-item label .mandatory-marker {
     color: var(--error-color);
 }
@@ -1457,6 +1494,7 @@ body.dark-mode .date-duration-info .duration-benefits {
     word-wrap: break-word;
     color: var(--text-dark);
 }
+
 .info-item .display-value i,
 .info-item .display-value.not-set {
     color: #94a3b8;
@@ -1470,10 +1508,14 @@ body.dark-mode .date-duration-info .duration-benefits {
     gap: 5px;
     align-items: center;
 }
-.edit-input input, .edit-input .select2-container {
+
+.edit-input input,
+.edit-input .select2-container {
     flex-grow: 1;
 }
-.edit-input input, .edit-input select {
+
+.edit-input input,
+.edit-input select {
     /* Increased padding for better readability */
     padding: 14px 12px;
     /* Larger font size */
@@ -1490,6 +1532,7 @@ body.dark-mode .date-duration-info .duration-benefits {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 /* This is for the OLD personal info edit view */
 #personal-info-edit-grid .edit-input button {
     border: 1px solid #cbd5e1;
@@ -1500,8 +1543,16 @@ body.dark-mode .date-duration-info .duration-benefits {
     cursor: pointer;
     flex-shrink: 0;
 }
-#personal-info-edit-grid .edit-input .save-btn { color: var(--success-color); border-color: var(--success-color); }
-#personal-info-edit-grid .edit-input .cancel-btn { color: var(--error-color); border-color: var(--error-color); }
+
+#personal-info-edit-grid .edit-input .save-btn {
+    color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+#personal-info-edit-grid .edit-input .cancel-btn {
+    color: var(--error-color);
+    border-color: var(--error-color);
+}
 
 .navigation-buttons {
     margin-top: 30px;
@@ -1509,6 +1560,7 @@ body.dark-mode .date-duration-info .duration-benefits {
     justify-content: flex-end;
     gap: 10px;
 }
+
 #question-flow-view .navigation-buttons {
     justify-content: space-between;
 }
@@ -1572,12 +1624,16 @@ body.dark-mode .date-duration-info .duration-benefits {
 body.dark-mode .validation-hint {
     color: var(--dark-gray);
 }
-.question-input, .question-input-group, .question-card .select2-container {
+
+.question-input,
+.question-input-group,
+.question-card .select2-container {
     width: 100%;
     max-width: 450px;
     margin: 0 auto 15px auto;
     display: block;
-    position: relative; /* Needed for dropdown positioning */
+    position: relative;
+    /* Needed for dropdown positioning */
 }
 
 .radio-group {
@@ -1587,6 +1643,7 @@ body.dark-mode .validation-hint {
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
+
 .radio-group label {
     display: flex;
     align-items: center;
@@ -1601,10 +1658,12 @@ body.dark-mode .validation-hint {
     font-weight: 500;
     color: var(--text-dark);
 }
+
 .radio-group label:hover {
     border-color: var(--primary-color);
     background-color: #f7f8fc;
 }
+
 .radio-group label.selected {
     border-color: var(--primary-color);
     background-color: #eef2ff;
@@ -1634,7 +1693,7 @@ body.dark-mode .radio-group label.selected {
 }
 
 .radio-group input[type="radio"] {
-   display: none;
+    display: none;
 }
 
 .note {
@@ -2008,13 +2067,13 @@ body.dark-mode .evisa-example-close:hover {
 }
 
 /* Better spacing for modal content elements */
-.evisa-example-content > *,
-.sharecode-modal-content > * {
+.evisa-example-content>*,
+.sharecode-modal-content>* {
     margin-bottom: 15px;
 }
 
-.evisa-example-content > *:last-child,
-.sharecode-modal-content > *:last-child {
+.evisa-example-content>*:last-child,
+.sharecode-modal-content>*:last-child {
     margin-bottom: 0;
 }
 
@@ -2121,13 +2180,13 @@ body.dark-mode .sharecode-modal-close:hover {
 }
 
 /* Better spacing for modal content */
-.sharecode-modal-content > *,
-.evisa-example-content > * {
+.sharecode-modal-content>*,
+.evisa-example-content>* {
     margin-bottom: 15px;
 }
 
-.sharecode-modal-content > *:last-child,
-.evisa-example-content > *:last-child {
+.sharecode-modal-content>*:last-child,
+.evisa-example-content>*:last-child {
     margin-bottom: 0;
 }
 
@@ -2162,6 +2221,7 @@ body.dark-mode .sharecode-example-link {
     padding: 24px;
     border: 2px solid var(--medium-gray);
 }
+
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -2172,6 +2232,7 @@ body.dark-mode .sharecode-example-link {
     gap: 15px;
     flex-wrap: wrap;
 }
+
 .section-title {
     margin: 0;
     padding: 0;
@@ -2183,10 +2244,12 @@ body.dark-mode .sharecode-example-link {
     align-items: center;
     gap: 10px;
 }
+
 .section-title i {
     color: var(--primary-color);
     font-size: 1.1rem;
 }
+
 .locked-badge {
     background: var(--warning-color);
     color: white;
@@ -2198,6 +2261,7 @@ body.dark-mode .sharecode-example-link {
     align-items: center;
     gap: 6px;
 }
+
 .section-edit-buttons {
     display: flex;
     gap: 10px;
@@ -2213,7 +2277,8 @@ body.dark-mode .sharecode-example-link {
 }
 
 .summary-sub-details {
-    display: contents; /* This makes the container disappear, promoting its children */
+    display: contents;
+    /* This makes the container disappear, promoting its children */
 }
 
 
@@ -2227,9 +2292,11 @@ body.dark-mode .sharecode-example-link {
     background: #fff;
     transition: all 0.3s ease;
 }
+
 .file-upload-wrapper:hover {
     border-color: var(--primary-color);
 }
+
 .file-input {
     width: 0.1px;
     height: 0.1px;
@@ -2238,25 +2305,36 @@ body.dark-mode .sharecode-example-link {
     position: absolute;
     z-index: -1;
 }
+
 .file-label {
     width: 100%;
     max-width: 250px;
     margin: 0 auto;
 }
+
 .file-status {
     margin-top: 10px;
     font-weight: 500;
 }
-.file-status.success { color: var(--success-color); }
-.file-status.error { color: var(--error-color); }
 
-.image-preview .file-list, .display-value .file-list {
+.file-status.success {
+    color: var(--success-color);
+}
+
+.file-status.error {
+    color: var(--error-color);
+}
+
+.image-preview .file-list,
+.display-value .file-list {
     list-style: none;
     padding: 0;
     text-align: left;
     margin-top: 15px;
 }
-.image-preview .file-list li, .display-value .file-list li {
+
+.image-preview .file-list li,
+.display-value .file-list li {
     margin-bottom: 8px;
     padding: 8px 12px;
     background: var(--light-gray);
@@ -2275,13 +2353,16 @@ body.dark-mode .display-value .file-list li {
     border-color: var(--medium-gray);
 }
 
-.image-preview a, .display-value a {
+.image-preview a,
+.display-value a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
     word-break: break-all;
 }
-.image-preview a:hover, .display-value a:hover {
+
+.image-preview a:hover,
+.display-value a:hover {
     text-decoration: underline;
 }
 
@@ -2300,24 +2381,32 @@ body.dark-mode .display-value a {
     border-radius: 4px;
     flex-shrink: 0;
 }
+
 .btn-delete-file:hover {
     background: #fee2e2;
 }
+
 /* Update the button styling for plain text content */
 .btn-delete-file {
-    background: transparent; /* Ensure no background */
-    border: none; /* Ensure no border */
+    background: transparent;
+    /* Ensure no background */
+    border: none;
+    /* Ensure no border */
     color: var(--error-color);
     cursor: pointer;
-    padding: 5px 8px; /* Added some horizontal padding for text */
+    padding: 5px 8px;
+    /* Added some horizontal padding for text */
     border-radius: 4px;
     flex-shrink: 0;
-    font-size: 1.1rem; /* Increased size for the character/text */
+    font-size: 1.1rem;
+    /* Increased size for the character/text */
     line-height: 1;
-    display: flex; /* Helps align the character */
+    display: flex;
+    /* Helps align the character */
     align-items: center;
     justify-content: center;
 }
+
 .btn-delete-file:hover {
     background: #fee2e2;
 }
@@ -2333,10 +2422,11 @@ body.dark-mode .btn-delete-file:hover {
 
 /* Ensure the deletion is always disabled and visible if the form is locked */
 .form-container.locked .btn-delete-file {
-    pointer-events: none !important; 
+    pointer-events: none !important;
     opacity: 0.5 !important;
     cursor: not-allowed !important;
-    color: #94a3b8 !important; /* Grey out the text/character */
+    color: #94a3b8 !important;
+    /* Grey out the text/character */
     display: flex !important;
 }
 
@@ -2344,8 +2434,10 @@ body.dark-mode .btn-delete-file:hover {
 /* .form-container.locked .btn-delete-file { display: none; } <-- Ensure this line is NOT present */
 /* Add this rule to your site's CSS to ensure the icon is visible even when disabled */
 .btn-delete-file[disabled] {
-    opacity: 1 !important; /* Forces full visibility */
-    display: block !important; /* Ensures it's not hidden by a parent rule */
+    opacity: 1 !important;
+    /* Forces full visibility */
+    display: block !important;
+    /* Ensures it's not hidden by a parent rule */
     cursor: default !important;
 }
 
@@ -2364,6 +2456,7 @@ body.dark-mode .btn-delete-file:hover {
     background: #fff;
     transition: all 0.3s ease;
 }
+
 .summary-upload-area:hover {
     border-color: var(--primary-color);
 }
@@ -2384,6 +2477,7 @@ body.dark-mode .summary-upload-area:hover {
     margin: 0;
     width: auto;
 }
+
 .info-item.full-width .display-value {
     width: 100%;
 }
@@ -2432,6 +2526,7 @@ body.dark-mode .confirmation-label {
     max-width: 450px;
     margin: 0 auto 20px auto;
 }
+
 .labeled-input-group .group-label {
     font-weight: 600;
     font-size: 1.05rem;
@@ -2440,6 +2535,7 @@ body.dark-mode .confirmation-label {
     display: block;
     width: 100%;
 }
+
 .labeled-input-group input,
 .labeled-input-group select {
     width: 100%;
@@ -2453,10 +2549,12 @@ body.dark-mode .labeled-input-group .group-label {
 
 /* Select2 Customization */
 .select2-container--default .select2-selection--single {
-    height: 56px; /* Increased to match input height (18px padding × 2 + 20px text) */
+    height: 56px;
+    /* Increased to match input height (18px padding × 2 + 20px text) */
     border: 2px solid var(--medium-gray);
     border-radius: 8px;
 }
+
 .select2-container--default .select2-selection--single .select2-selection__rendered {
     line-height: 52px;
     padding-left: 16px;
@@ -2464,10 +2562,12 @@ body.dark-mode .labeled-input-group .group-label {
     font-size: 1.2rem;
     font-weight: 500;
 }
+
 .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 52px;
     width: 32px;
 }
+
 .select2-container--default.select2-container--open .select2-selection--single {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
@@ -2520,20 +2620,24 @@ body.dark-mode .select2-search--dropdown .select2-search__field:focus {
 .select2-container--open .select2-dropdown--below {
     border-radius: 8px;
     border-color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
 .select2-search--dropdown .select2-search__field {
     padding: 10px;
     border: 2px solid var(--medium-gray);
     border-radius: 6px;
     outline: none;
 }
+
 .select2-search--dropdown .select2-search__field:focus {
     border-color: var(--primary-color);
 }
+
 .select2-results__option {
     padding: 10px;
 }
+
 .select2-results__option--highlighted.select2-results__option--selectable {
     background-color: var(--primary-color);
 }
@@ -2556,9 +2660,11 @@ body.dark-mode .select2-search--dropdown .select2-search__field:focus {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 .info-item .edit-input-field:focus {
     outline: none;
 }
+
 .info-item .edit-input-field::placeholder {
     color: var(--dark-gray);
     font-weight: 400;
@@ -2583,16 +2689,19 @@ body.dark-mode .info-item .edit-input-field:focus {
 .info-item .edit-input-field.select2-hidden-accessible {
     display: none;
 }
+
 .info-item .select2-container--default .select2-selection--single {
     height: 42px;
     border-width: 2px;
     border-color: var(--primary-color);
 }
+
 .info-item .select2-container--default .select2-selection--single .select2-selection__rendered {
     line-height: 40px;
     font-size: 0.95rem;
     padding-left: 10px;
 }
+
 .info-item .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 40px;
 }
@@ -2609,19 +2718,28 @@ body.dark-mode .info-item .select2-container--default .select2-selection--single
 
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Locked Form Styles */
 .form-container.locked .section-edit-buttons {
     display: none;
 }
+
 .form-container.locked .summary-upload-area {
     pointer-events: none;
     opacity: 0.7;
     background: var(--light-gray);
 }
+
 .form-container.locked .info-item:not(.read-only) {
     background-color: var(--light-gray);
 }
@@ -2703,6 +2821,7 @@ body.dark-mode #delete-modal-content p {
     gap: 15px;
     margin-top: 20px;
 }
+
 /* ===== MODERN HEADER STYLES ===== */
 .top-header {
     background: #ffffff;
@@ -2821,7 +2940,7 @@ body.dark-mode .theme-toggle .fa-moon {
         width: 42px;
         height: 42px;
     }
-    
+
     .theme-toggle i {
         font-size: 1.1rem;
     }
@@ -3059,6 +3178,7 @@ body.dark-mode .skeleton-button-primary {
     0% {
         background-position: 200% 0;
     }
+
     100% {
         background-position: -200% 0;
     }
@@ -3070,27 +3190,27 @@ body.dark-mode .skeleton-button-primary {
         width: 60%;
         height: 28px;
     }
-    
+
     .skeleton-subtitle {
         width: 80%;
         height: 18px;
     }
-    
+
     .skeleton-text-lg {
         width: 90%;
         height: 24px;
     }
-    
+
     .skeleton-text-sm {
         width: 70%;
         height: 16px;
     }
-    
+
     .skeleton-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .skeleton-button,
     .skeleton-button-primary {
         width: 100%;
@@ -3424,19 +3544,19 @@ body.dark-mode .password-toggle:hover {
         padding: 16px;
         margin: 16px 0;
     }
-    
+
     .file-label {
         width: 100%;
         padding: 14px 20px;
         font-size: 0.95rem;
     }
-    
+
     .file-list-item {
         padding: 12px;
         font-size: 0.85rem;
         word-break: break-all;
     }
-    
+
     .file-list-item button {
         min-width: 36px;
         padding: 8px;
@@ -3448,18 +3568,18 @@ body.dark-mode .password-toggle:hover {
         padding: 12px;
         margin: 12px 0;
     }
-    
+
     .file-label {
         padding: 12px 16px;
         font-size: 0.9rem;
     }
-    
+
     .file-list-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
     }
-    
+
     .file-list-item button {
         align-self: flex-end;
     }
@@ -3471,7 +3591,7 @@ body.dark-mode .password-toggle:hover {
         margin-top: 16px;
         padding: 16px;
     }
-    
+
     .radio-with-upload-section .file-label {
         width: 100%;
     }
@@ -3483,23 +3603,23 @@ body.dark-mode .password-toggle:hover {
         padding: 12px !important;
         font-size: 0.85rem !important;
     }
-    
+
     .info-box ol,
     .info-box ul {
         padding-left: 16px !important;
         margin: 8px 0 !important;
     }
-    
+
     .info-box li {
         margin-bottom: 8px !important;
     }
-    
+
     /* Visual guide buttons container */
-    .info-box > div[style*="display: flex"] {
+    .info-box>div[style*="display: flex"] {
         flex-direction: column !important;
         gap: 10px !important;
     }
-    
+
     /* Individual buttons */
     .evisa-example-link,
     .sharecode-download-link,
@@ -3517,7 +3637,7 @@ body.dark-mode .password-toggle:hover {
         font-size: 0.8rem !important;
         border-radius: 8px !important;
     }
-    
+
     .evisa-example-link,
     .sharecode-download-link,
     .sharecode-example-link {
@@ -3528,6 +3648,7 @@ body.dark-mode .password-toggle:hover {
 
 /* Input Fields Mobile */
 @media (max-width: 768px) {
+
     .question-input,
     .question-input-group,
     input[type="text"],
@@ -3536,7 +3657,8 @@ body.dark-mode .password-toggle:hover {
     input[type="date"],
     select,
     textarea {
-        font-size: 16px !important; /* Prevents zoom on iOS */
+        font-size: 16px !important;
+        /* Prevents zoom on iOS */
         padding: 12px 14px;
     }
 }
@@ -3545,7 +3667,7 @@ body.dark-mode .password-toggle:hover {
     .labeled-input-group {
         margin-bottom: 16px;
     }
-    
+
     .group-label {
         font-size: 0.9rem;
         margin-bottom: 6px;
@@ -3566,7 +3688,7 @@ body.dark-mode .password-toggle:hover {
     .radio-group {
         gap: 10px;
     }
-    
+
     .radio-group label {
         padding: 12px 16px;
         font-size: 0.9rem;
@@ -3578,7 +3700,7 @@ body.dark-mode .password-toggle:hover {
         flex-direction: column;
         gap: 8px;
     }
-    
+
     .radio-group label {
         width: 100%;
         text-align: center;
@@ -3592,15 +3714,15 @@ body.dark-mode .password-toggle:hover {
         padding: 16px;
         margin: 16px 0;
     }
-    
+
     .success-recommendation h4 {
         font-size: 1rem;
     }
-    
+
     .success-recommendation p {
         font-size: 0.85rem;
     }
-    
+
     .duration-badge {
         padding: 6px 12px;
         font-size: 0.85rem;
@@ -3615,19 +3737,19 @@ body.dark-mode .password-toggle:hover {
         padding: 12px 16px;
         text-align: center;
     }
-    
+
     .appointment-date-display i {
         font-size: 1.5rem;
     }
-    
+
     .appointment-info {
         align-items: center;
     }
-    
+
     .appointment-label {
         font-size: 0.8rem;
     }
-    
+
     .appointment-date {
         font-size: 1rem;
     }
@@ -3638,7 +3760,7 @@ body.dark-mode .password-toggle:hover {
     #progress-text-wrapper {
         font-size: 0.85rem;
     }
-    
+
     #progress-bar-wrapper {
         height: 8px;
     }
@@ -3649,9 +3771,10 @@ body.dark-mode .password-toggle:hover {
     .navigation-buttons {
         gap: 12px;
         position: relative;
-        z-index: 1; /* Below select2 dropdown */
+        z-index: 1;
+        /* Below select2 dropdown */
     }
-    
+
     .btn-primary,
     .btn-secondary {
         padding: 12px 24px;
@@ -3665,7 +3788,7 @@ body.dark-mode .password-toggle:hover {
         width: 100%;
         gap: 10px;
     }
-    
+
     .btn-primary,
     .btn-secondary {
         width: 100%;
@@ -3675,13 +3798,14 @@ body.dark-mode .password-toggle:hover {
 
 /* Warning/Highlight Boxes - Mobile */
 @media (max-width: 768px) {
+
     .highlight-note,
     .warning-box {
         padding: 12px 16px;
         font-size: 0.85rem;
         margin: 12px 0;
     }
-    
+
     .highlight-note i,
     .warning-box i {
         font-size: 1rem;
@@ -3690,19 +3814,20 @@ body.dark-mode .password-toggle:hover {
 
 /* Modal Popups - Mobile */
 @media (max-width: 768px) {
+
     .evisa-example-modal,
     .sharecode-download-modal,
     .sharecode-example-modal {
         padding: 10px;
     }
-    
+
     .evisa-example-backdrop,
     .sharecode-modal-backdrop {
         padding: 15px;
         align-items: flex-start;
         padding-top: 30px;
     }
-    
+
     .evisa-example-content,
     .sharecode-modal-content {
         padding: 25px 20px;
@@ -3712,7 +3837,7 @@ body.dark-mode .password-toggle:hover {
         border-radius: 10px;
         -webkit-overflow-scrolling: touch;
     }
-    
+
     .evisa-example-content h4,
     .sharecode-modal-content h4 {
         font-size: 1.15rem;
@@ -3720,21 +3845,21 @@ body.dark-mode .password-toggle:hover {
         padding-right: 35px;
         line-height: 1.4;
     }
-    
+
     .evisa-example-content img,
     .sharecode-modal-content img {
         max-width: 100%;
         height: auto;
         margin: 15px auto;
     }
-    
+
     .evisa-example-content p,
     .sharecode-modal-content p {
         font-size: 0.95rem;
         line-height: 1.6;
         margin-bottom: 12px;
     }
-    
+
     .evisa-example-close,
     .sharecode-modal-close {
         font-size: 1.8rem;
@@ -3750,7 +3875,7 @@ body.dark-mode .password-toggle:hover {
         align-items: center;
         justify-content: center;
     }
-    
+
     body.dark-mode .evisa-example-close,
     body.dark-mode .sharecode-modal-close {
         background: rgba(0, 0, 0, 0.5);
@@ -3762,12 +3887,12 @@ body.dark-mode .password-toggle:hover {
     .co-travelers-section {
         margin: 12px 0;
     }
-    
+
     .co-travelers-header {
         padding: 12px 16px;
         font-size: 0.9rem;
     }
-    
+
     .co-traveler-item {
         padding: 10px 12px;
         font-size: 0.85rem;
@@ -3779,7 +3904,7 @@ body.dark-mode .password-toggle:hover {
     .section-header {
         padding: 12px 16px;
     }
-    
+
     .section-title {
         font-size: 1.1rem;
     }
@@ -3791,7 +3916,7 @@ body.dark-mode .password-toggle:hover {
         grid-template-columns: 1fr !important;
         gap: 12px;
     }
-    
+
     .info-item {
         padding: 12px;
     }
@@ -3800,14 +3925,15 @@ body.dark-mode .password-toggle:hover {
 /* Select2 Dropdown - Mobile */
 @media (max-width: 768px) {
     .select2-container {
-        font-size: 16px !important; /* Prevents zoom on iOS */
+        font-size: 16px !important;
+        /* Prevents zoom on iOS */
     }
-    
+
     .select2-container--default .select2-selection--single {
         height: 48px !important;
         padding: 12px !important;
     }
-    
+
     .select2-container--default .select2-selection--single .select2-selection__rendered {
         line-height: 48px !important;
     }
@@ -3818,13 +3944,13 @@ body.dark-mode .password-toggle:hover {
     .footer-content {
         padding: 20px 16px;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: 12px;
         text-align: center;
     }
-    
+
     .footer-left,
     .footer-right {
         justify-content: center;
@@ -3837,7 +3963,7 @@ body.dark-mode .password-toggle:hover {
         max-width: 90%;
         padding: 20px;
     }
-    
+
     #delete-modal-filename {
         font-size: 0.8rem;
         padding: 8px;
@@ -3849,14 +3975,14 @@ body.dark-mode .password-toggle:hover {
     body {
         overflow-x: hidden;
     }
-    
+
     .main-container,
     .form-container,
     .content-area {
         max-width: 100vw;
         overflow-x: hidden;
     }
-    
+
     /* Question card needs overflow visible for Select2 dropdown */
     .question-card {
         max-width: 100vw;
@@ -3866,6 +3992,7 @@ body.dark-mode .password-toggle:hover {
 
 /* Touch Target Sizes - Mobile Accessibility */
 @media (max-width: 768px) {
+
     button,
     .btn-primary,
     .btn-secondary,
@@ -3884,12 +4011,12 @@ body.dark-mode .password-toggle:hover {
         font-size: 14px;
         line-height: 1.6;
     }
-    
+
     .question-text {
         font-size: 1.1rem !important;
         line-height: 1.3;
     }
-    
+
     .note,
     small,
     .validation-hint {
@@ -3900,6 +4027,7 @@ body.dark-mode .password-toggle:hover {
 
 /* Fix iOS Safari Input Styling */
 @media (max-width: 768px) {
+
     input,
     select,
     textarea {
@@ -3908,7 +4036,7 @@ body.dark-mode .password-toggle:hover {
         appearance: none;
         border-radius: 8px;
     }
-    
+
     /* Prevent iOS zoom on focus */
     input:focus,
     select:focus,
@@ -3928,18 +4056,18 @@ body.dark-mode .password-toggle:hover {
         border: 2px solid #cbd5e1 !important;
         border-radius: 10px !important;
     }
-    
+
     .select2-container--default .select2-selection--single .select2-selection__rendered {
         line-height: 30px !important;
         padding-left: 0 !important;
         font-size: 16px !important;
     }
-    
+
     .select2-container--default .select2-selection--single .select2-selection__arrow {
         height: 48px !important;
         right: 10px !important;
     }
-    
+
     /* Dark mode dropdown */
     body.dark-mode .select2-container--default .select2-selection--single {
         background-color: var(--bg-tertiary) !important;
@@ -3950,6 +4078,7 @@ body.dark-mode .password-toggle:hover {
 
 /* Confirmation Checkbox Styling - Mobile (Images 2 & 3) */
 @media (max-width: 768px) {
+
     .confirmation-box,
     .date-confirmation-section {
         background: #ffffff;
@@ -3958,13 +4087,13 @@ body.dark-mode .password-toggle:hover {
         padding: 16px;
         margin: 16px 0;
     }
-    
+
     body.dark-mode .confirmation-box,
     body.dark-mode .date-confirmation-section {
         background: var(--bg-tertiary);
         border-color: #475569;
     }
-    
+
     /* Checkbox label container */
     .confirmation-checkbox-label {
         display: flex;
@@ -3975,15 +4104,15 @@ body.dark-mode .password-toggle:hover {
         border-radius: 8px;
         transition: background 0.2s;
     }
-    
+
     .confirmation-checkbox-label:active {
-        background: rgba(0,0,0,0.05);
+        background: rgba(0, 0, 0, 0.05);
     }
-    
+
     body.dark-mode .confirmation-checkbox-label:active {
-        background: rgba(255,255,255,0.05);
+        background: rgba(255, 255, 255, 0.05);
     }
-    
+
     /* Custom checkbox */
     .confirmation-checkbox-label input[type="checkbox"] {
         width: 24px;
@@ -3993,7 +4122,7 @@ body.dark-mode .password-toggle:hover {
         cursor: pointer;
         accent-color: var(--primary-color);
     }
-    
+
     /* Checkbox text */
     .confirmation-checkbox-label span {
         font-size: 15px;
@@ -4001,7 +4130,7 @@ body.dark-mode .password-toggle:hover {
         color: var(--text-dark);
         flex: 1;
     }
-    
+
     body.dark-mode .confirmation-checkbox-label span {
         color: #e2e8f0;
     }
@@ -4017,7 +4146,7 @@ body.dark-mode .password-toggle:hover {
         padding: 0;
         margin: 16px 0;
     }
-    
+
     .radio-group label {
         width: 100% !important;
         max-width: 100% !important;
@@ -4035,35 +4164,35 @@ body.dark-mode .password-toggle:hover {
         white-space: normal;
         word-wrap: break-word;
     }
-    
+
     .radio-group label:active {
         transform: scale(0.98);
     }
-    
+
     .radio-group label.selected {
         background: var(--primary-color) !important;
         color: #ffffff !important;
         border-color: var(--primary-color) !important;
         font-weight: 600;
     }
-    
+
     .radio-group label:not(.selected):active {
         background: #f1f5f9;
     }
-    
+
     /* Dark mode radio buttons */
     body.dark-mode .radio-group label {
         background: var(--bg-tertiary);
         color: #e2e8f0;
         border-color: #475569;
     }
-    
+
     body.dark-mode .radio-group label.selected {
         background: var(--primary-color) !important;
         color: #ffffff !important;
         border-color: var(--primary-color) !important;
     }
-    
+
     body.dark-mode .radio-group label:not(.selected):active {
         background: #334155;
     }
@@ -4085,6 +4214,7 @@ body.dark-mode .password-toggle:hover {
 
 /* Input Fields - Better Mobile Styling */
 @media (max-width: 768px) {
+
     input[type="text"],
     input[type="email"],
     input[type="tel"],
@@ -4100,7 +4230,7 @@ body.dark-mode .password-toggle:hover {
         -webkit-appearance: none;
         appearance: none;
     }
-    
+
     input[type="text"]:focus,
     input[type="email"]:focus,
     input[type="tel"]:focus,
@@ -4111,7 +4241,7 @@ body.dark-mode .password-toggle:hover {
         outline: none;
         box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
-    
+
     /* Dark mode inputs */
     body.dark-mode input[type="text"],
     body.dark-mode input[type="email"],
@@ -4132,7 +4262,7 @@ body.dark-mode .password-toggle:hover {
         margin-right: 10px;
         color: #64748b;
     }
-    
+
     body.dark-mode .select2-container--default .select2-selection--single .select2-selection__clear {
         color: #94a3b8;
     }
@@ -4140,6 +4270,7 @@ body.dark-mode .password-toggle:hover {
 
 /* Success/Recommendation Box - Mobile */
 @media (max-width: 768px) {
+
     .success-recommendation,
     .optimal-duration-box {
         padding: 16px;
@@ -4147,13 +4278,13 @@ body.dark-mode .password-toggle:hover {
         border-radius: 12px;
         border: 2px solid #10b981;
     }
-    
+
     .success-recommendation h4,
     .optimal-duration-box h4 {
         font-size: 16px;
         margin-bottom: 8px;
     }
-    
+
     .success-recommendation p,
     .optimal-duration-box p {
         font-size: 14px;
@@ -4170,30 +4301,30 @@ body.dark-mode .password-toggle:hover {
         padding: 12px 16px;
         margin: 8px 0;
     }
-    
+
     .date-display-box strong {
         display: block;
         font-size: 13px;
         color: #64748b;
         margin-bottom: 4px;
     }
-    
+
     .date-display-box span {
         display: block;
         font-size: 15px;
         color: var(--text-dark);
         font-weight: 600;
     }
-    
+
     body.dark-mode .date-display-box {
         background: var(--bg-tertiary);
         border-color: #475569;
     }
-    
+
     body.dark-mode .date-display-box strong {
         color: #94a3b8;
     }
-    
+
     body.dark-mode .date-display-box span {
         color: #f1f5f9;
     }
@@ -4204,11 +4335,11 @@ body.dark-mode .password-toggle:hover {
     * {
         max-width: 100%;
     }
-    
+
     .question-card,
-    .question-card > *,
+    .question-card>*,
     .radio-group,
-    .radio-group > *,
+    .radio-group>*,
     input,
     select,
     textarea,
@@ -4227,7 +4358,7 @@ body.dark-mode .password-toggle:hover {
         padding: 0;
         margin-top: 20px;
     }
-    
+
     .btn-primary,
     .btn-secondary {
         width: 100%;
@@ -4239,32 +4370,32 @@ body.dark-mode .password-toggle:hover {
         cursor: pointer;
         transition: all 0.2s;
     }
-    
+
     .btn-primary {
         background: var(--primary-color);
         color: #ffffff;
     }
-    
+
     .btn-primary:active {
         background: var(--primary-hover);
         transform: scale(0.98);
     }
-    
+
     .btn-secondary {
         background: #f1f5f9;
         color: var(--text-dark);
     }
-    
+
     .btn-secondary:active {
         background: #e2e8f0;
         transform: scale(0.98);
     }
-    
+
     body.dark-mode .btn-secondary {
         background: var(--bg-tertiary);
         color: #e2e8f0;
     }
-    
+
     body.dark-mode .btn-secondary:active {
         background: #475569;
     }
@@ -4334,7 +4465,7 @@ body.dark-mode input[type="checkbox"]:checked::after {
         min-width: 26px;
         border-width: 2px;
     }
-    
+
     input[type="checkbox"]:checked::after {
         font-size: 18px;
     }
@@ -4411,22 +4542,36 @@ body.dark-mode .final-confirmation-checkbox label {
 
 /* Shake Animation Keyframes */
 @keyframes shake {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
-    10%, 30%, 50%, 70%, 90% {
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
         transform: translateX(-8px);
     }
-    20%, 40%, 60%, 80% {
+
+    20%,
+    40%,
+    60%,
+    80% {
         transform: translateX(8px);
     }
 }
 
 @keyframes pulse-red {
-    0%, 100% {
+
+    0%,
+    100% {
         border-color: #ef4444;
         box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
     }
+
     50% {
         border-color: #dc2626;
         box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
@@ -4501,6 +4646,7 @@ body.dark-mode .checkbox-error-message {
         transform: translateY(-10px);
         max-height: 0;
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -4542,22 +4688,33 @@ body.dark-mode .checkbox-wrapper.error:has(input:checked) {
 /* Mobile Optimization */
 @media (max-width: 768px) {
     @keyframes shake {
-        0%, 100% {
+
+        0%,
+        100% {
             transform: translateX(0);
         }
-        10%, 30%, 50%, 70%, 90% {
+
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
             transform: translateX(-6px);
         }
-        20%, 40%, 60%, 80% {
+
+        20%,
+        40%,
+        60%,
+        80% {
             transform: translateX(6px);
         }
     }
-    
+
     input[type="checkbox"].error,
     input[type="checkbox"].validation-error {
         border-width: 3px !important;
     }
-    
+
     .checkbox-error-message {
         font-size: 0.8rem;
         padding: 6px 10px;
@@ -4573,7 +4730,7 @@ input[type="checkbox"].validation-error:focus {
 }
 
 /* Ensure Error Class is Removed on Check */
-input[type="checkbox"]:checked ~ .checkbox-error-message {
+input[type="checkbox"]:checked~.checkbox-error-message {
     display: none;
 }
 
@@ -4604,6 +4761,7 @@ body.dark-mode .skeleton-loader {
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -4640,7 +4798,8 @@ body.dark-mode .skeleton-header {
     max-width: 900px;
     margin: 0 auto;
     padding: 32px 24px;
-    padding-top: 100px; /* Account for fixed header */
+    padding-top: 100px;
+    /* Account for fixed header */
 }
 
 @media (max-width: 768px) {
@@ -4663,9 +4822,12 @@ body.dark-mode .skeleton-header {
 }
 
 @keyframes skeleton-breathe {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.7;
     }
@@ -4769,30 +4931,33 @@ body.dark-mode .final-confirmation-checkbox:has(input:checked) label {
 }
 
 /* Alternative method using adjacent sibling selector for better compatibility */
-.confirmation-checkbox input[type="checkbox"]:checked + label,
-.date-confirmation-checkbox input[type="checkbox"]:checked + label,
-.final-confirmation-checkbox input[type="checkbox"]:checked + label,
-.confirmation-checkbox input[type="checkbox"]:checked ~ label,
-.date-confirmation-checkbox input[type="checkbox"]:checked ~ label,
-.final-confirmation-checkbox input[type="checkbox"]:checked ~ label {
+.confirmation-checkbox input[type="checkbox"]:checked+label,
+.date-confirmation-checkbox input[type="checkbox"]:checked+label,
+.final-confirmation-checkbox input[type="checkbox"]:checked+label,
+.confirmation-checkbox input[type="checkbox"]:checked~label,
+.date-confirmation-checkbox input[type="checkbox"]:checked~label,
+.final-confirmation-checkbox input[type="checkbox"]:checked~label {
     color: var(--text-dark) !important;
     font-weight: 500;
 }
 
-body.dark-mode .confirmation-checkbox input[type="checkbox"]:checked + label,
-body.dark-mode .date-confirmation-checkbox input[type="checkbox"]:checked + label,
-body.dark-mode .final-confirmation-checkbox input[type="checkbox"]:checked + label,
-body.dark-mode .confirmation-checkbox input[type="checkbox"]:checked ~ label,
-body.dark-mode .date-confirmation-checkbox input[type="checkbox"]:checked ~ label,
-body.dark-mode .final-confirmation-checkbox input[type="checkbox"]:checked ~ label {
+body.dark-mode .confirmation-checkbox input[type="checkbox"]:checked+label,
+body.dark-mode .date-confirmation-checkbox input[type="checkbox"]:checked+label,
+body.dark-mode .final-confirmation-checkbox input[type="checkbox"]:checked+label,
+body.dark-mode .confirmation-checkbox input[type="checkbox"]:checked~label,
+body.dark-mode .date-confirmation-checkbox input[type="checkbox"]:checked~label,
+body.dark-mode .final-confirmation-checkbox input[type="checkbox"]:checked~label {
     color: #e2e8f0 !important;
 }
 
 /* Emphasis on red text with subtle pulse */
 @keyframes subtle-pulse-red {
-    0%, 100% {
+
+    0%,
+    100% {
         color: #dc2626;
     }
+
     50% {
         color: #b91c1c;
     }
@@ -4807,7 +4972,8 @@ body.dark-mode .final-confirmation-checkbox input[type="checkbox"]:checked ~ lab
 body.dark-mode .confirmation-checkbox:not(:has(input:checked)) label,
 body.dark-mode .date-confirmation-checkbox:not(:has(input:checked)) label,
 body.dark-mode .final-confirmation-checkbox:not(:has(input:checked)) label {
-    animation: none; /* No animation in dark mode, just red color */
+    animation: none;
+    /* No animation in dark mode, just red color */
 }
 
 /* Stop animation when checked */
@@ -4868,13 +5034,14 @@ body.dark-mode .final-confirmation-checkbox:not(:has(input:checked)) label::befo
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
+
     .confirmation-checkbox label,
     .date-confirmation-checkbox label,
     .final-confirmation-checkbox label {
         font-size: 15px;
         line-height: 1.5;
     }
-    
+
     .confirmation-checkbox:not(:has(input:checked)),
     .date-confirmation-checkbox:not(:has(input:checked)),
     .final-confirmation-checkbox:not(:has(input:checked)) {
@@ -4963,9 +5130,12 @@ body.dark-mode .date-confirmation-box .date-value {
 
 /* Highlight Pulse Animation */
 @keyframes highlight-pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
     }
+
     50% {
         box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35);
     }
@@ -5009,32 +5179,28 @@ body.dark-mode .date-confirmation-box.success-highlight {
 /* Stripe Pattern Background (Optional) */
 .date-confirmation-section.striped,
 .date-confirmation-box.striped {
-    background: 
-        repeating-linear-gradient(
-            45deg,
+    background:
+        repeating-linear-gradient(45deg,
             #eff6ff,
             #eff6ff 10px,
             #dbeafe 10px,
-            #dbeafe 20px
-        );
+            #dbeafe 20px);
 }
 
 body.dark-mode .date-confirmation-section.striped,
 body.dark-mode .date-confirmation-box.striped {
-    background: 
-        repeating-linear-gradient(
-            45deg,
+    background:
+        repeating-linear-gradient(45deg,
             #1e3a5f,
             #1e3a5f 10px,
             #0f2847 10px,
-            #0f2847 20px
-        );
+            #0f2847 20px);
 }
 
 /* Glow Effect on Hover */
 .date-confirmation-section.glow:hover,
 .date-confirmation-box.glow:hover {
-    box-shadow: 
+    box-shadow:
         0 0 20px rgba(59, 130, 246, 0.4),
         0 0 40px rgba(59, 130, 246, 0.2),
         0 8px 24px rgba(59, 130, 246, 0.3);
@@ -5042,25 +5208,26 @@ body.dark-mode .date-confirmation-box.striped {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+
     .date-confirmation-section,
     .date-confirmation-box,
     .confirmation-dates-box {
         padding: 20px;
         margin: 16px 0;
     }
-    
+
     .date-confirmation-section::before,
     .date-confirmation-box::before {
         font-size: 20px;
         top: 16px;
         right: 20px;
     }
-    
+
     .date-confirmation-section .date-label,
     .date-confirmation-box .date-label {
         font-size: 14px;
     }
-    
+
     .date-confirmation-section .date-value,
     .date-confirmation-box .date-value {
         font-size: 16px;
@@ -5213,12 +5380,13 @@ body.dark-mode .select2-search--dropdown .select2-search__field {
 
 /* Mobile Responsive Adjustments for Select2 */
 @media (max-width: 768px) {
+
     /* Ensure Select2 takes full width on mobile */
     .select2-container {
         width: 100% !important;
         display: block;
     }
-    
+
     /* Fix for dropdown positioning on mobile */
     .select2-container--open .select2-dropdown {
         position: absolute !important;
@@ -5228,53 +5396,53 @@ body.dark-mode .select2-search--dropdown .select2-search__field {
         left: 0 !important;
         right: 0 !important;
     }
-    
+
     /* Dropdown opens below the select */
     .select2-container--open .select2-dropdown--below {
         top: 100% !important;
         margin-top: 4px;
     }
-    
+
     /* Dropdown opens above the select */
     .select2-container--open .select2-dropdown--above {
         bottom: 100% !important;
         margin-bottom: 4px;
     }
-    
+
     /* Make the select2 container properly handle touch events */
     .select2-container--default .select2-selection--single {
         -webkit-tap-highlight-color: transparent;
         touch-action: manipulation;
     }
-    
+
     .select2-container .select2-selection--single {
         height: 52px !important;
         font-size: 16px !important;
     }
-    
+
     .select2-container .select2-selection__rendered {
         line-height: 48px !important;
         font-size: 16px !important;
         padding-left: 14px !important;
         padding-right: 40px !important;
     }
-    
+
     .select2-container .select2-selection__arrow {
         height: 48px !important;
     }
-    
+
     .select2-results__option {
         padding: 14px 16px !important;
         font-size: 16px !important;
         min-height: 48px !important;
     }
-    
+
     .select2-search--dropdown .select2-search__field {
         padding: 14px 16px !important;
         font-size: 16px !important;
         min-height: 48px !important;
     }
-    
+
     /* Fix for grouped select options */
     .select2-results__group {
         padding: 10px 16px !important;
@@ -5282,22 +5450,22 @@ body.dark-mode .select2-search--dropdown .select2-search__field {
         font-weight: 600;
         color: var(--primary-color);
     }
-    
+
     body.dark-mode .select2-results__group {
         color: var(--primary-color);
     }
-    
+
     /* Prevent zoom on iOS when focusing */
     .select2-search__field {
         font-size: 16px !important;
     }
-    
+
     /* Fix for results container overflow */
     .select2-results {
         max-height: 50vh !important;
         overflow-y: auto !important;
     }
-    
+
     /* Ensure parent containers don't hide dropdown */
     .question-card,
     .input-group,
@@ -5313,42 +5481,42 @@ body.dark-mode .select2-search--dropdown .select2-search__field {
     .select2-container .select2-selection--single {
         height: 54px !important;
     }
-    
+
     .select2-container .select2-selection__rendered {
         line-height: 50px !important;
         padding-left: 12px !important;
     }
-    
+
     .select2-results__option {
         padding: 15px 12px !important;
     }
-    
+
     /* Modal fixes for very small screens */
     .evisa-example-backdrop,
     .sharecode-modal-backdrop {
         padding: 10px;
         padding-top: 20px;
     }
-    
+
     .evisa-example-content,
     .sharecode-modal-content {
         padding: 20px 15px;
         border-radius: 8px;
         max-height: 92vh;
     }
-    
+
     .evisa-example-content h4,
     .sharecode-modal-content h4 {
         font-size: 1rem;
         padding-right: 40px;
     }
-    
+
     .evisa-example-content p,
     .sharecode-modal-content p {
         font-size: 0.9rem;
         line-height: 1.5;
     }
-    
+
     .evisa-example-close,
     .sharecode-modal-close {
         width: 36px;
@@ -5393,42 +5561,43 @@ body.dark-mode .select2-container--default.select2-container--open .select2-sele
 
 /* ===== MOBILE SELECT2 TOUCH FIX ===== */
 @media (max-width: 768px) {
+
     /* Improve touch targets for Select2 */
     .select2-container--default .select2-selection--single {
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         touch-action: manipulation;
     }
-    
+
     /* Ensure the select2 dropdown opens properly on touch */
     .select2-container--open {
         z-index: 100000 !important;
     }
-    
+
     /* Dropdown should overlay, not push content */
     .select2-container .select2-dropdown {
         position: absolute !important;
         z-index: 100001 !important;
     }
-    
+
     /* Make search input touch-friendly */
     .select2-search--dropdown .select2-search__field {
         -webkit-appearance: none;
         touch-action: manipulation;
     }
-    
+
     /* Ensure grouped options are clickable */
     .select2-results__option--group,
     .select2-results__option {
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
     }
-    
+
     /* Fix for iOS Safari - prevent zoom on input focus */
     .select2-search__field:focus {
         font-size: 16px !important;
     }
-    
+
     /* Ensure navigation buttons stay below dropdown */
     .question-card .navigation-buttons {
         position: relative;
